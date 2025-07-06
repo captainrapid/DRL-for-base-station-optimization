@@ -15,12 +15,12 @@ Files
 
 EnvironmentDependency
   
-  * Python 3.8+
-  * numpy
-  * torch
-  * gym
-  * matplotlib
-  * scipy
+  Python 3.8+
+  numpy
+  torch
+  gym
+  matplotlib
+  scipy
 
 
 Parameters

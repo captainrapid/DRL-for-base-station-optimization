@@ -8,7 +8,7 @@
 - Two base stations + DC microgrid  
 - Hybrid power supply (renewable + grid)  
 - Joint energy and spectrum cooperation  
-![System Model](figures/image1.png)
+![System Model](figures/picture1.jpg)
 
 ### Algorithms
 - **Baseline Strategies**: Greedy, Conservative  
@@ -17,27 +17,29 @@
   - **DDPG**: For continuous action spaces with centralized training  
   - **MADDPG**: Multi-agent distributed cooperation  
   - **TD3**: Twin delayed DDPG, enhancing convergence and performance  
-![Algorithm Framework](figures/image2.png)  
-![DDPG Architecture](figures/image3.png)  
-![MADDPG Architecture](figures/image4.png)
+![Algorithm Framework](figures/picture2.jpg)  
+![DDPG Architecture](figures/picture3.jpg)  
+![MADDPG Architecture](figures/picture4.jpg)
 
 ## Results
 
 Simulation results compare **Greedy, Conservative, DQN, DDPG, MADDPG, and TD3**:
 
-1. **Convergence of Reward Functions**  
-   ![Reward Convergence](figures/image2.png)
+1. **Convergence of Reward Functions**
+   - When the environment(amount of user, grid price, etc.) is static.
+   ![Reward Convergence](figures/picture5.jpg)
+   - When the environment(amount of user, grid price, etc.) is oscillating.
+   ![Reward Convergence](figures/picture6.jpg)
 
-2. **Throughput Comparison**  
+3. **Throughput Comparison**  
    - DDPG improves throughput by ~20×  
    - MADDPG achieves ~15× in distributed scenarios  
-   - TD3 further boosts throughput by ~40%  
-   ![Throughput Comparison](figures/image2.png)
+   ![Throughput Comparison](figures/picture7.jpg)
 
-3. **Energy Efficiency & Grid Dependency**  
+4. **Energy Efficiency & Grid Dependency**  
    - Deep RL algorithms significantly reduce reliance on grid power  
    - Improve overall energy efficiency  
-   ![Energy Efficiency Comparison](figures/image2.png)
+   ![Energy Efficiency Comparison](figures/picture8.jpg)
 
 ## File Structure
 - `train_n_evaluate_2.py`   Main script for training, evaluation and visualization

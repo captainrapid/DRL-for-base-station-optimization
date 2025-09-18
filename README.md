@@ -2,6 +2,43 @@
   Based on the reinforcement learning framework, this project designs and compares a variety of classic and improved algorithms (DQN, DDPG, TD3, MADDPG, Greedy, Conservative) for the resource allocation problem of heterogeneous cellular networks powered by renewable energy.
   The performance of the algorithms in terms of throughput, cost, energy efficiency, QoS and other indicators is evaluated through simulation experiments.
 
+## Methods
+
+### System Model
+- Two base stations + DC microgrid  
+- Hybrid power supply (renewable + grid)  
+- Joint energy and spectrum cooperation  
+![System Model](figures/image1.png)
+
+### Algorithms
+- **Baseline Strategies**: Greedy, Conservative  
+- **Reinforcement Learning**:
+  - **DQN**: For discrete action spaces  
+  - **DDPG**: For continuous action spaces with centralized training  
+  - **MADDPG**: Multi-agent distributed cooperation  
+  - **TD3**: Twin delayed DDPG, enhancing convergence and performance  
+![Algorithm Framework](figures/image2.png)  
+![DDPG Architecture](figures/image3.png)  
+![MADDPG Architecture](figures/image4.png)
+
+## Results
+
+Simulation results compare **Greedy, Conservative, DQN, DDPG, MADDPG, and TD3**:
+
+1. **Convergence of Reward Functions**  
+   ![Reward Convergence](figures/image2.png)
+
+2. **Throughput Comparison**  
+   - DDPG improves throughput by ~20×  
+   - MADDPG achieves ~15× in distributed scenarios  
+   - TD3 further boosts throughput by ~40%  
+   ![Throughput Comparison](figures/image2.png)
+
+3. **Energy Efficiency & Grid Dependency**  
+   - Deep RL algorithms significantly reduce reliance on grid power  
+   - Improve overall energy efficiency  
+   ![Energy Efficiency Comparison](figures/image2.png)
+
 ## File Structure
 - `train_n_evaluate_2.py`   Main script for training, evaluation and visualization
 - `environment_2.py`        Gym Environment Customization: BaseStationEnv
